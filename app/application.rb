@@ -11,7 +11,7 @@ class Application
       item = req.params['item']
       binding.pry
       if @@items.include?(item)
-        resp.write "#{item}"
+        # resp.write "#{item}"
 
         resp.status = 200
       else
