@@ -1,12 +1,13 @@
 class Application
 
-  @@item=[Item.new("Figs"), Item.new("Pears")]
+  @@item=[Item.new("Figs", 3.42), Item.new("Pears", 0.99)]
 
   def call(env)
     resp = Rack::Response.new
     req = Rack:Request.new(env)
 
     if req.path=="/items/<ITEM NAME>"
+      return 
     else
       resp.write "Item not found"
       resp.status = 404
