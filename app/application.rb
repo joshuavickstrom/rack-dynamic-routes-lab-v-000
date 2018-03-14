@@ -6,6 +6,8 @@ class Application
 
     if req.path=="/items/<ITEM NAME>"
     else
+      resp.write "Item not found"
+      resp.status = 404
     end
   end
 
