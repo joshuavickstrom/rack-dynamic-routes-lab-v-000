@@ -9,14 +9,12 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split('/items/').last
-      if @@items.include?(item)
-        binding.pry
+      @@items.find{ |i| i.name == item}
         resp.write "#{item.price}"
         resp.status = 200
-      else
+    else
         resp.write "Item not found"
         resp.status = 400
-      end
     else
       resp.write "Route not found"
       resp.status = 404
