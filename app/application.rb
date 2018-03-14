@@ -12,7 +12,7 @@ class Application
       @@items.find{ |i| i.name == item}
         resp.write "#{item.price}"
         resp.status = 200
-    else
+    elsif
         resp.write "Item not found"
         resp.status = 400
     else
