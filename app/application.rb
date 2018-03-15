@@ -10,7 +10,6 @@ class Application
     if req.path.match(/items/)
       item = req.path.split('/items/').last
       if found_item = @@items.find{ |i| i.name == item}
-        binding.pry
           resp.write "#{found_item.price}"
           resp.status = 200
       else
